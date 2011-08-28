@@ -1,11 +1,9 @@
-all: main
+main: main.cc build/stack.o
+	g++ main.cc build/stack.o -o build/main
 
-main: main.cc stack.o
-	g++ -o main main.cc stack.o
-
-stack.o: stack.cc
-	g++ -c stack.cc
+build/stack.o: stack.cc
+	mkdir -p build
+	g++ -c stack.cc -o build/stack.o
 
 clean:
-	rm -rf *.o main
-
+	rm -rf build
