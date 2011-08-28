@@ -6,7 +6,7 @@ int add(int a, int b);
 // Integer stack
 class Stack {
   private:
-    vector<int> array(int);
+    vector<int> v;
   public:
     Stack();
     void push(int);

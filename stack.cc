@@ -12,11 +12,16 @@ Stack::Stack() {
 }
 
 int Stack::pop() {
-  cout << "POP" << endl;
-  return 1;
+  if (v.size() == 0) {
+    cout << "Underflow!" << endl;
+    return -1;
+  }
+  int last = v.back();
+  v.pop_back();
+  return last;
 }
 
 void Stack::push(int val) {
-  cout << "PUSH" << endl;
+  v.push_back(val);
   return;
 }
